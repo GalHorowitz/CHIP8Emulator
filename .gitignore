@@ -1,0 +1,7 @@
+roms/
+.vs/
+x64/
+*.sln
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj
