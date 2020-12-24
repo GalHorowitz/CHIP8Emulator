@@ -34,12 +34,12 @@ void Chip8::step() {
 	// Reset the dirty state, appropriate instructions will set it.
 	screen_dirty = false;
 
-	// An instruction is 2 bytes long, big-endian
-	short instr = ((memory[PC_register] << 8) & 0xFF00 | (memory[PC_register + 1]));
-
 	if (PC_register + 1 > MEM_SIZE) {
 		throw std::runtime_error("Executing instructions out of bounds");
 	}
+	
+	// An instruction is 2 bytes long, big-endian
+	short instr = ((memory[PC_register] << 8) & 0xFF00 | (memory[PC_register + 1]));
 
 	// Decode instruction
 	switch ((memory[PC_register] >> 4) & 0xF) {
