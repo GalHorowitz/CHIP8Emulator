@@ -21,8 +21,6 @@ A 0 B F      Z X C V
 typedef unsigned char byte;
 
 class Chip8 {
-	const int screen_width = 64;
-
 	// The first 512 bytes of memory are reserved for the interpreter,
 	// we only use them to store font sprites.
 	byte memory[MEM_SIZE] = {
